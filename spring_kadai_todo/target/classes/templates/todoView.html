@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html　xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ToDo リスト</title>
+</head>
+<body>
+<h1>ToDo リスト</h1>
+<table>
+	<thead>
+	   <tr>
+		<th>ID</th>
+		<th>タイトル</th>
+		<th>優先度</th>
+		<th>ステータス</th>
+	   </tr>
+	</thead>
+        <tbody>
+	<tr th:each="todo : ${todos}">
+		<td th:text="${todo.Id}"></td>
+		<td th:text="${todo.Title}"></td>
+		<td th:text="${todo.Priority}"></td>
+		<td th:text="${todo.Status}"></td>
+	</tr>
+	</tbody>
+</table>
+</body>
+</html>

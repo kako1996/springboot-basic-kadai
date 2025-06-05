@@ -1,5 +1,6 @@
 package com.example.springkadaiform.form;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
@@ -10,7 +11,8 @@ public class ContactForm {
 	private String name;
 	
 	//メールアドレス
-	@NotBlank(message = "メールアドレスの入力形式が正しくありません。")
+	@Email(message = "メールアドレスの入力形式が正しくありません。")
+	@NotBlank(message = "メールアドレスを入力してください。")
 	private String email;
 	
 	//お問い合わせ内容

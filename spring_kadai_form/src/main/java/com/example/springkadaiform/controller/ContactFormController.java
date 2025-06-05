@@ -15,7 +15,7 @@ import jakarta.validation.Valid;
 public class ContactFormController {
 	
 	//GETリクエストの処理
-	@GetMapping("/contactForm")
+	@GetMapping("/form")
 	public String contactForm(Model model) {
 		// すでにインスタンスが存在する場合は行わない
         if (!model.containsAttribute("contactForm")) {
@@ -40,7 +40,7 @@ public class ContactFormController {
             // バリデーション結果をビューに受け渡す
             redirectAttributes.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "contactForm", result);
             
-            return "redirect:/contactForm";
+            return "redirect:/form";
         }
             
         redirectAttributes.addFlashAttribute("contactForm", form);
